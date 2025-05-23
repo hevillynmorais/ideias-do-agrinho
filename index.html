@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Festejando a Conexão</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Festejando a Conexão do Campo e da Cidade</h1>
+        <p id="header-subtitle">Histórias que unem, jogos que divertem!</p>
+        <nav>
+            <ul>
+                <li><a href="#/" data-route="/">Início</a></li>
+                <li><a href="#/historias" data-route="/historias">Histórias</a></li>
+                <li><a href="#/ranking" data-route="/ranking">Ranking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="placar-container" class="placar-principal">
+            Seu Placar: <span id="pontuacao-atual">0</span> pontos
+        </div>
+
+        <section id="home-page" class="page-section">
+            <h2>Bem-vindo(a) à nossa celebração!</h2>
+            <p>
+                Descubra histórias inspiradoras que mostram como o campo e a cidade estão interligados, e divirta-se com jogos desafiadores que testarão seus conhecimentos. A cada jogo, você ganha pontos para celebrar essa conexão!
+            </p>
+            <p>Acumule pontos e tente entrar no nosso **ranking dos melhores!** Seu objetivo é alcançar o Top 4!</p>
+            <button id="iniciar-jornada" class="button">Iniciar Jornada</button>
+        </section>
+
+        <section id="stories-list-page" class="page-section hidden">
+            <h2 class="list-title">Escolha uma história para começar:</h2>
+            <div id="lista-de-historias" class="stories-grid">
+                <p class="loading-message">Carregando histórias...</p>
+            </div>
+            <div class="call-to-action">
+                <p>Curioso para saber sua posição?</p>
+                <a href="#/ranking" data-route="/ranking" class="button">Ver Ranking Global</a>
+            </div>
+        </section>
+
+        <section id="story-detail-page" class="page-section hidden">
+            <h2 id="historia-titulo"></h2>
+            <img id="historia-imagem" src="" alt="Imagem da história" class="story-image">
+            <div id="historia-conteudo" class="story-content"></div>
+
+            <button id="btn-iniciar-jogo" class="button">Iniciar Desafio da Conexão</button>
+
+            <div id="area-jogo" class="jogo-container hidden">
+                <h3>Desafio da Conexão!</h3>
+                <p id="pergunta-jogo"></p>
+                <div id="opcoes-jogo" class="options-grid">
+                    </div>
+                <p id="feedback-jogo" class="feedback"></p>
+            </div>
+            <button id="btn-voltar-historias" class="button button-secondary">Voltar ao Menu de Histórias</button>
+        </section>
+
+        <section id="ranking-page" class="page-section hidden">
+            <h2>Ranking dos Conectados</h2>
+            <p>Seu objetivo é entrar no Top 4! Continue jogando para aumentar sua pontuação!</p>
+            <div class="ranking-list-container">
+                <ol id="lista-ranking" class="ranking-list">
+                    <li class="ranking-item placeholder">Carregando ranking...</li>
+                </ol>
+            </div>
+            <form id="form-salvar-pontuacao" class="save-score-form hidden">
+                <h3>Parabéns! Você fez uma boa pontuação!</h3>
+                <p>Insira seu nome para entrar no ranking:</p>
+                <input type="text" id="nome-jogador" placeholder="Seu nome" required minlength="2" maxlength="15">
+                <button type="submit" class="button">Salvar Pontuação</button>
+                <p id="salvar-feedback" class="feedback"></p>
+            </form>
+            <button id="btn-reset-ranking" class="button button-danger">Resetar Ranking (Apenas para Testes)</button>
+        </section>
+
+        <section id="not-found-page" class="page-section hidden">
+            <h2>Ops! Página não encontrada.</h2>
+            <p>Parece que você se perdeu na conexão. Volte para o início!</p>
+            <a href="#/" data-route="/" class="button">Voltar ao Início</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Projeto Conexão Campo & Cidade</p>
+    </footer>
+
+    <script src="js/historiasData.js"></script>
+    <script src="js/uiElements.js"></script>
+    <script src="js/rankingManager.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
