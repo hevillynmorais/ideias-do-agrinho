@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const iniciarJornadaBtn = document.getElementById('iniciar-jornada');
     if (iniciarJornadaBtn) {
         iniciarJornadaBtn.addEventListener('click', () => {
-            navigateTo('/historias');
+            navigateTo('/historias'); // Esta linha faz a navegação para a próxima página
         });
     }
 });
