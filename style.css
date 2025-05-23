@@ -1,0 +1,421 @@
+/* Variáveis CSS para cores */
+:root {
+    --color-primary: #4CAF50; /* Verde campo */
+    --color-secondary: #007bff; /* Azul cidade */
+    --color-accent: #e65100; /* Laranja para pontos */
+    --color-background: #f8f8f8;
+    --color-card-bg: #e8f5e9; /* Verde claro para cards */
+    --color-game-bg: #e3f2fd; /* Azul claro para jogos */
+    --color-correct: #2e7d32; /* Verde para acerto */
+    --color-wrong: #c62828; /* Vermelho para erro */
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+    --color-border: #ddd;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px var(--color-shadow);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--color-text-light);
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--color-shadow);
+    flex-grow: 1;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    background-color: #fefefe;
+}
+
+h2 {
+    color: #2e7d32; /* Verde mais escuro */
+    border-bottom: 2px solid #a5d6a7;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none; /* Para links com estilo de botão */
+    display: inline-block; /* Para links com estilo de botão */
+    margin-top: 15px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background-color: #6c757d; /* Cinza */
+    margin-left: 10px;
+}
+
+.button-secondary:hover {
+    background-color: #5a6268;
+}
+
+.button-danger {
+    background-color: #dc3545; /* Vermelho */
+    margin-left: 0;
+}
+
+.button-danger:hover {
+    background-color: #bd2130;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+.placar-principal {
+    text-align: right;
+    font-size: 1.4em;
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #fff3e0; /* Laranja claro */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    margin-bottom: 20px;
+}
+
+.header-controls h2 {
+    margin: 0;
+    border-bottom: none; /* Remove a linha de baixo do h2 neste contexto */
+    padding-bottom: 0;
+}
+
+/* Estilos para a lista de histórias */
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.story-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 250px; /* Garante altura mínima para cards */
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.story-card h3 {
+    color: #388e3c;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.story-card-image {
+    max-width: 100%;
+    height: 120px; /* Altura fixa para uniformidade */
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.call-to-action {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f0f4c3; /* Amarelo/Verde claro */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.call-to-action p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Estilos para a página de detalhe da história */
+.story-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.story-content {
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+/* Estilos para a área do jogo */
+.jogo-container {
+    padding: 30px;
+    background-color: var(--color-game-bg);
+    border-radius: 12px;
+    margin-top: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px var(--color-shadow);
+}
+
+.jogo-container h3 {
+    color: #1976d2;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.jogo-container p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.option-button {
+    background-color: #81d4fa; /* Azul claro */
+    color: #212121;
+    border: 1px solid #4fc3f7;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 180px;
+}
+
+.option-button:hover:not(:disabled) {
+    background-color: #4fc3f7;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.option-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Feedback de cores do jogo */
+.correct-answer {
+    background-color: var(--color-correct) !important;
+    color: var(--color-text-light) !important;
+    border-color: #1b5e20 !important;
+    font-weight: bold;
+}
+
+.wrong-answer {
+    background-color: var(--color-wrong) !important;
+    color: var(--color-text-light) !important;
+    border-color: #b71c1c !important;
+    font-weight: bold;
+}
+
+.feedback {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 1.4em;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.feedback.acerto {
+    color: var(--color-correct);
+}
+
+.feedback.erro {
+    color: var(--color-wrong);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos para o ranking */
+.ranking-list-container {
+    margin-top: 30px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+}
+
+.ranking-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ranking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background-color: var(--color-text-light);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 1.1em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.ranking-item:nth-child(odd) {
+    background-color: #fcfcfc;
+}
+
+.ranking-item.top-1 { background-color: #ffeb3b; font-weight: bold; } /* Amarelo */
+.ranking-item.top-2 { background-color: #c5cae9; font-weight: bold; } /* Azul claro */
+.ranking-item.top-3 { background-color: #f8bbd0; font-weight: bold; } /* Rosa */
+.ranking-item.top-4 { background-color: #b2dfdb; font-weight: bold; } /* Verde água */
+
+
+.ranking-item .position {
+    font-weight: bold;
+    color: var(--color-secondary);
+    min-width: 30px;
+    text-align: center;
+}
+
+.ranking-item .name {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+
+.ranking-item .score {
+    font-weight: bold;
+    color: var(--color-accent);
+}
+
+.save-score-form {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #e0f2f7; /* Azul bem claro */
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.save-score-form h3 {
+    color: #0d47a1;
+    margin-bottom: 15px;
+}
+
+.save-score-form p {
+    margin-bottom: 20px;
+}
+
+.save-score-form input[type="text"] {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #333;
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* Mensagens de feedback e carregamento */
+.loading-message, .error-message {
+    text-align: center;
+    font-size: 1.4em;
+    padding: 40px;
+    color: #555;
+}
+.error-message {
+    color: var(--color-wrong);
+}
